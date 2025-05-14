@@ -25,9 +25,16 @@
             padding: 0 20px;
         }
         
+        /* Header styling with logo and profile image side by side */
         header {
             padding: 20px 0;
             border-bottom: 1px solid #eee;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .logo {
@@ -36,39 +43,38 @@
             display: block;
         }
         
-        .main-content {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 40px 0;
-        }
-        
         .profile-image {
-            flex: 0 0 100%;
-            max-width: 100%;
-        }
-        
-        @media (min-width: 768px) {
-            .profile-image {
-                flex: 0 0 40%;
-                max-width: 40%;
-            }
-            
-            .text-content {
-                flex: 0 0 60%;
-                max-width: 60%;
-                padding-left: 40px;
-            }
+            max-width: 200px;
+            text-align: right;
         }
         
         .profile-image img {
             max-width: 100%;
             height: auto;
-            display: block;
-            border-radius: 5px; /* Adds slight rounding to the image corners */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow */
+            display: inline-block;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Main content layout with chat on left, text on right */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 0;
+            gap: 40px;
+        }
+        
+        .chat-container {
+            flex: 1;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 500px;
         }
         
         .text-content {
+            flex: 1;
+            text-align: right;
             padding-top: 20px;
         }
         
@@ -90,14 +96,6 @@
             color: var(--accent-color);
         }
         
-        .chat-container {
-            margin: 40px 0;
-            border: 1px solid #eee;
-            border-radius: 10px;
-            padding: 20px;
-            min-height: 400px;
-        }
-        
         footer {
             padding: 20px 0;
             border-top: 1px solid #eee;
@@ -109,44 +107,68 @@
         .footer-text {
             font-size: 0.9rem;
         }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .profile-image {
+                text-align: center;
+            }
+            
+            .main-content {
+                flex-direction: column-reverse;
+            }
+            
+            .text-content {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <!-- Use your CHAT REWARDS logo -->
-            <img src="chat-rewards-logo.png" alt="CHAT REWARDS Logo" class="logo">
-            <!-- Note: Save the logo image you uploaded as "chat-rewards-logo.png" in the same folder as your HTML file -->
+            <div class="header-content">
+                <!-- CHAT REWARDS logo on the left -->
+                <div>
+                    <img src="chat-rewards-logo.png" alt="CHAT REWARDS Logo" class="logo">
+                </div>
+                
+                <!-- Profile picture on the right -->
+                <div class="profile-image">
+                    <img src="professional-headshot.jpg" alt="Professional headshot">
+                </div>
+            </div>
         </div>
     </header>
 
     <main class="container">
         <div class="main-content">
-            <div class="profile-image">
-                <!-- Your professional headshot -->
-                <img src="professional-headshot.jpg" alt="Professional headshot">
-                <!-- Note: Save the headshot image you uploaded as "professional-headshot.jpg" in the same folder as your HTML file -->
+            <!-- Chat container on the left -->
+            <div class="chat-container">
+                <!-- Your chat or embedded tool would go here -->
+                <div id="chat-placeholder" style="text-align: center; padding-top: 220px;">
+                    Your embedded chat or tool goes here
+                </div>
             </div>
+            
+            <!-- Text content on the right, right-aligned -->
             <div class="text-content">
-                <h1>LET’S TALK REWARD - Executive Compensation & Total Rewards Expertise</h1>
+                <h1>Let's talk about Your Topic</h1>
                 <p>
-                    Looking for expert guidance in Total Rewards and Executive Compensation? Meet Loshen Naidu, a seasoned Total Rewards consultant with over 20 years of global experience in employee and executive reward strategies. </strong> 
-            </p>
-                Loshen understands the real-world challenges faced by Remuneration Committee (Remco) Chairs, CEOs, CHROs, and corporate reward leaders—because he’s been there. His deep experience spans both the strategic and operational aspects of reward management, offering clients credible, actionable insights.
-                <p>
-                    Born in KwaZulu-Natal, South Africa, Loshen’s career accelerated in Johannesburg, where he became one of Arthur Andersen’s youngest Tax & Legal managers. He then moved to the Middle East, where his focus turned global—advising on cross-border reward strategies across emerging markets and multinational corporations.
+                    Your introduction text goes here. Consider sharing your background, expertise, and unique value proposition. <strong>You can highlight important parts like this to make key information stand out.</strong>
                 </p>
-                With a portfolio of creatively designed solutions and a genuine passion for his field, Loshen launched his digital consulting platform to close the access gap to seasoned reward advisors—often limited by budget or availability. His goal is simple: to provide on-demand, flexible access to a creative executive reward expert, equipping you with the insights you need to spark and shape your own strategic reward solutions.
-            </p>
-                Whether you need support on executive pay design, long-term incentives, remuneration benchmarking, or strategic reward communication, Loshen is here to help. Prefer a direct conversation? He’s happy to book personal time with you.
-            </div>
-        </div>
-        
-        <div class="chat-container">
-            <!-- Your chat or embedded tool would go here -->
-            <!-- Replace this comment with your chat code or other embed -->
-            <div id="chat-placeholder" style="text-align: center; padding-top: 180px;">
-                Your embedded chat or tool goes here
+                <p>
+                    Add more paragraphs as needed to fully explain your offer or value to visitors. This text is right-aligned to create a clean, professional layout with the chat tool on the left.
+                </p>
+                <p>
+                    A third paragraph can provide additional details about your services, methodology, or benefits for the user.
+                </p>
             </div>
         </div>
     </main>
